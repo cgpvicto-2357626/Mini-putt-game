@@ -7,9 +7,9 @@ public class SuiviPosition : MonoBehaviour
     private Transform cible;
 
     /// <summary>
-    /// apprés que tous les méthodes updates soient terminés, on execute cette méthode
+    /// s'execute apres tous les Update() du frame, donc la position copiee est toujours la position finale de la balle
     /// </summary>
-    void Update()
+    void LateUpdate()
     {
         transform.position = cible.position;
     }

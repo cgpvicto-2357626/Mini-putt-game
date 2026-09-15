@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\suiviposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\suiviposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\mouvementscamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mouvementscamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\detecteurtrou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\detecteurtrou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\boost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\sticky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sticky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\bounce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bounce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\controleballe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\gestionnairecamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gestionnairecamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\suiviposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\suiviposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\detecteurtrou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\detecteurtrou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\ismhe\\onedrive\\documents\\automne 2026\\jeux 3d\\mini-putt-game\\assets\\scripts\\gameevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sticky.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Sticky.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Sticky.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Sticky.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Sticky.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T13:44:05.822Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -50,67 +79,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SuiviPosition.cs",
-              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\SuiviPosition.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SuiviPosition.cs",
-              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\SuiviPosition.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SuiviPosition.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Bounce.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Bounce.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bounce.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Bounce.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bounce.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-10T13:14:07.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DetecteurTrou.cs",
-              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\DetecteurTrou.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DetecteurTrou.cs",
-              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\DetecteurTrou.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DetecteurTrou.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T23:02:05.56Z",
+              "WhenOpened": "2026-09-15T00:02:30.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GameEvents.cs",
-              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GameEvents.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameEvents.cs",
-              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GameEvents.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameEvents.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T15:27:05.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GestionnaireCamera.cs",
-              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GestionnaireCamera.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GestionnaireCamera.cs",
-              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GestionnaireCamera.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GestionnaireCamera.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAIwCQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T16:29:08.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ControleBalle.cs",
               "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\ControleBalle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ControleBalle.cs",
               "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\ControleBalle.cs",
               "RelativeToolTip": "Assets\\Scripts\\ControleBalle.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAiwGcAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T21:19:41.966Z",
+              "WhenOpened": "2026-09-12T23:55:22.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuiviPosition.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\SuiviPosition.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SuiviPosition.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\SuiviPosition.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SuiviPosition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T23:40:23.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GestionnaireCamera.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GestionnaireCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GestionnaireCamera.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GestionnaireCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GestionnaireCamera.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAIwGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-13T00:17:21.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DetecteurTrou.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\DetecteurTrou.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DetecteurTrou.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\DetecteurTrou.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DetecteurTrou.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-13T00:07:21.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameEvents.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GameEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameEvents.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\GameEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-13T00:31:35.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Boost.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Boost.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Boost.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\Boost.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Boost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T13:01:44.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mouvementsCamera.cs",
+              "DocumentMoniker": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\mouvementsCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\mouvementsCamera.cs",
+              "ToolTip": "C:\\Users\\ismhe\\OneDrive\\Documents\\Automne 2026\\Jeux 3D\\Mini-putt-game\\Assets\\Scripts\\mouvementsCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\mouvementsCamera.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T22:48:42.625Z",
               "EditorCaption": ""
             }
           ]

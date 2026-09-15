@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
-
 
 /// <summary>
 /// Script pour controller la balle en la frappant avec space
@@ -13,6 +11,7 @@ public class ControleBalle : MonoBehaviour
     [SerializeField] private PlayerInput controles;
     [SerializeField] private Animator animatorMarteau;
     [SerializeField] private Transform cibleCamera;
+    [SerializeField] private float delaiAvantVerification = 0.2f;
 
     [Header("Paramétres")]
     [SerializeField] private float forceFrappe = 1.5f;
@@ -21,6 +20,8 @@ public class ControleBalle : MonoBehaviour
     private InputAction actionFrapper;
     private bool enMove = false;
     private bool pretAFrapper = false;
+
+    private float tempsDerniereFrappe = -1f;
 
     /// <summary>
     /// prépare la touche espace pour faire avancer la balle
@@ -40,7 +41,6 @@ public class ControleBalle : MonoBehaviour
     private void Update()
     {
         VerifierArretBalle();
-        SuivreBalle();
     }
 
     /// <summary>
@@ -53,7 +53,7 @@ public class ControleBalle : MonoBehaviour
             actionFrapper.performed -= DetecteFrappe;
         }
     }
-    
+
     /// <summary>
     /// qunad on appuie sur espace, la balle est frappée sauf il est pas en move
     /// </summary>
@@ -63,6 +63,8 @@ public class ControleBalle : MonoBehaviour
         if (!enMove && !pretAFrapper)
         {
             pretAFrapper = true;
+            GameEvents.TriggerModeFixeActive();
+
             if (animatorMarteau != null)
             {
                 animatorMarteau.SetTrigger("Frapper");
@@ -80,11 +82,12 @@ public class ControleBalle : MonoBehaviour
     /// </summary>
     private void OnCollisionEnter(Collision collision)
     {
-        if (pretAFrapper == true && collision.gameObject.CompareTag("Marteau")){
+        if (pretAFrapper == true && collision.gameObject.CompareTag("Marteau"))
+        {
             pretAFrapper = false;
             enMove = true;
 
-            Debug.Log("[BALLE] Frappe OK → TriggerFrappeCommencee");
+            tempsDerniereFrappe = Time.time;
             GameEvents.TriggerFrappeCommencee();
 
             rb.WakeUp();
@@ -97,13 +100,7 @@ public class ControleBalle : MonoBehaviour
     /// <summary>
     /// Déplace en continu la cible de la caméra sur X et Z pour suivre la balle en mouvement.
     /// </summary>
-    private void SuivreBalle()
-    {
-        if (enMove && cibleCamera != null)
-        {
-            cibleCamera.position = transform.position;
-        }
-    }
+
 
     /// <summary>
     /// on vérfie si la balle est arréter
@@ -116,16 +113,15 @@ public class ControleBalle : MonoBehaviour
         if (!enMove)
             return;
 
+        if (Time.time - tempsDerniereFrappe < delaiAvantVerification)
+        {
+            return;
+        }
+
         if (enMove && rb.linearVelocity.sqrMagnitude < vitesseArret * vitesseArret)
         {
             enMove = false;
             pretAFrapper = false;
-            Debug.Log("[BALLE] Arrêtée → TriggerBalleArretee");
-
-            if (cibleCamera != null)
-            {
-                cibleCamera.position = transform.position;
-            }
 
             GameEvents.TriggerBalleArretee();
         }

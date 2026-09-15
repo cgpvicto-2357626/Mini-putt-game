@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 /// <summary>
 /// Détecte quand la balle entre dans le trou.
@@ -8,21 +7,21 @@ public class DetecteurTrou : MonoBehaviour
 {
     [Header("Réferences")]
     [SerializeField] private Transform pointDepart;
+
     /// <summary>
-    /// Quand un objet avec le tag "Ball" entre dans le trigger, on détecte le trou.
+    /// Quand un objet avec le tag ball entre dans le trigger, on détecte le trou
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
-            Debug.Log("balle dans le trou !");
             TeleporterBalle(other);
         }
     }
 
     /// <summary>
     /// Replace la balle au point de départ et arrête sa vitesse
-    /// pour qu'elle ne garde pas son élan.
+    /// aussi afficher le drapeau a cote du trou
     /// </summary>
     private void TeleporterBalle(Collider ballCollider)
     {
@@ -32,11 +31,9 @@ public class DetecteurTrou : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            rb.position = pointDepart.position;
+            rb.rotation = pointDepart.rotation;
         }
-
-        rb.position = pointDepart.position;
-        rb.rotation = pointDepart.rotation;
-
         GameEvents.TriggerBalleArretee();
     }
 }

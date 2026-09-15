@@ -59,9 +59,13 @@
     <Compile Include="Assets\Scripts\DetecteurTrou.cs" />
     <Compile Include="Assets\Scripts\GameEvents.cs" />
     <Compile Include="Assets\Scripts\mouvementsCamera.cs" />
+    <Compile Include="Assets\Scripts\GestionnaireDrapeau.cs" />
+    <Compile Include="Assets\Scripts\Bounce.cs" />
     <Compile Include="Assets\Scripts\SuiviPosition.cs" />
     <Compile Include="Assets\GolfAssets\Code\CloudSpawner.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Boost.cs" />
+    <Compile Include="Assets\Scripts\Sticky.cs" />
     <Compile Include="Assets\GolfAssets\Code\RotateObject.cs" />
     <Compile Include="Assets\Scripts\GestionnaireCamera.cs" />
     <Compile Include="Assets\Scripts\ControleBalle.cs" />

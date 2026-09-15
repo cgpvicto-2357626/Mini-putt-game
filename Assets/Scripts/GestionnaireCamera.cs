@@ -3,13 +3,16 @@ using Unity.Cinemachine;
 using System;
 
 /// <summary>
-/// Gérer le changement entre les deux caméras, utile pour quelle caméra doit étre active à chaque moment du jeu
+/// Gérer le changement entre les trois caméras, utile pour quelle caméra doit étre active à chaque moment du jeu
 /// </summary>
 public class GestionnaireCamera : MonoBehaviour
 {
-    [SerializeField] private CinemachineCamera camPlacement;
-    [SerializeField] private CinemachineCamera camSuivi;
+    [SerializeField] private GameObject camPlacement;
+    [SerializeField] private GameObject camSuivi;
+    [SerializeField] private GameObject camFixe;
     [SerializeField] private MonoBehaviour controlesPlacement;
+
+
 
     void Start()
     {
@@ -20,24 +23,33 @@ public class GestionnaireCamera : MonoBehaviour
     {
         GameEvents.OnFrappeCommencee += ActiverModeSuivi;
         GameEvents.OnBalleArretee += ActiverModePlacement;
+        GameEvents.OnModeFixeActive += ActiverModeFixe;
     }
 
     private void OnDisable()
     {
         GameEvents.OnFrappeCommencee -= ActiverModeSuivi;
         GameEvents.OnBalleArretee -= ActiverModePlacement;
+        GameEvents.OnModeFixeActive -= ActiverModeFixe;
+
     }
 
     public void ActiverModePlacement()
     {
-        Debug.Log("[CAMERA] → Mode PLACEMENT");
         if (camPlacement != null)
         {
-            camPlacement.enabled = true;
+            camPlacement.SetActive(true);
+
         }
+
+        if (camFixe != null)
+        {
+            camFixe.SetActive(false);
+        }
+
         if (camSuivi != null)
         {
-            camSuivi.enabled = false;
+            camSuivi.SetActive(false);
         }
 
         if (controlesPlacement != null)
@@ -46,17 +58,44 @@ public class GestionnaireCamera : MonoBehaviour
         }
     }
 
-    public void ActiverModeSuivi()
+    public void ActiverModeFixe()
     {
-        Debug.Log("[CAMERA] → Mode SUIVI");
         if (camPlacement != null)
         {
-            camPlacement.enabled =false ;
+            camPlacement.SetActive(false);
+        }
+        if (camFixe != null)
+        {
+            camFixe.SetActive(true);
+        }
+        if (camSuivi != null)
+        {
+            camSuivi.SetActive(false);
+        }
+        if (controlesPlacement != null)
+        {
+            controlesPlacement.enabled = false;
+        }
+    }
+
+    /// <summary>
+    /// camera suivi quand la balle roule
+    /// </summary>
+    public void ActiverModeSuivi()
+    {
+        if (camPlacement != null)
+        {
+            camPlacement.SetActive(false);
         }
 
-        if(camSuivi != null)
+        if (camFixe != null)
         {
-            camSuivi .enabled = true;
+            camFixe.SetActive(false);
+        }
+
+        if (camSuivi != null)
+        {
+            camSuivi.SetActive(true);
         }
 
         if (controlesPlacement != null)
@@ -64,4 +103,6 @@ public class GestionnaireCamera : MonoBehaviour
             controlesPlacement.enabled = false;
         }
     }
+
+
 }

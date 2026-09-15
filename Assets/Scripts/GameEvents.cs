@@ -5,6 +5,28 @@ public static class GameEvents
     public static event Action OnFrappeCommencee;
     public static event Action OnBalleArretee;
 
-    public static void TriggerFrappeCommencee() => OnFrappeCommencee?.Invoke();
-    public static void TriggerBalleArretee() => OnBalleArretee?.Invoke();
+    public static event Action OnModeFixeActive;
+
+    public static void TriggerFrappeCommencee()
+    {
+        if(OnFrappeCommencee != null)
+        {
+            OnFrappeCommencee?.Invoke();
+        }
+    }
+    public static void TriggerBalleArretee()
+    {
+        if (OnBalleArretee != null)
+        {
+            OnBalleArretee?.Invoke();
+        }
+    }
+
+    public static void TriggerModeFixeActive()
+    {
+        if(OnModeFixeActive != null)
+        {
+            OnModeFixeActive.Invoke();
+        }
+    }
 }

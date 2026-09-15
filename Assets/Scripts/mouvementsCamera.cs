@@ -28,8 +28,6 @@ public class mouvementsCamera : MonoBehaviour
     private Vector2 limitesZoom;
 
     [Header("Références aux objets de jeu")]
-    [SerializeField]
-    private CinemachineCamera cameraGeree;
 
     [SerializeField]
     private BoxCollider volumeCamera;
@@ -49,7 +47,7 @@ public class mouvementsCamera : MonoBehaviour
         actionDeplacement.performed += CommencerDeplacement;
         actionDeplacement.canceled += TerminerDeplacement;
 
-        InputAction actionRetation= controles.actions.FindAction("player/TournerCamera");
+        InputAction actionRetation = controles.actions.FindAction("player/TournerCamera");
         actionRetation.performed += CommencerRotation;
         actionRetation.canceled += TerminerRotation;
 
@@ -155,7 +153,7 @@ public class mouvementsCamera : MonoBehaviour
     #region inclinaison
     private void CommencerInclinaison(InputAction.CallbackContext contexte)
     {
-        inclinaison = vitesseInclinaison * contexte.ReadValue <float>();
+        inclinaison = vitesseInclinaison * contexte.ReadValue<float>();
     }
 
     private void TerminerInclinaison(InputAction.CallbackContext contexte)
@@ -187,6 +185,7 @@ public class mouvementsCamera : MonoBehaviour
     }
     private void AppliquerZoom()
     {
+        /*
         CinemachinePositionComposer positionComposer = cameraGeree.GetComponent<CinemachinePositionComposer>();
         Vector3 offsetCamera = positionComposer.TargetOffset + positionComposer.TargetOffset.normalized * zoom;
         float distanceCamera = offsetCamera.magnitude;
@@ -195,14 +194,12 @@ public class mouvementsCamera : MonoBehaviour
         {   
             positionComposer.TargetOffset = offsetCamera;
         }
+        */
+        if (zoom == 0f)
+            return;
+
+        // bouger la camera vers l'avant ou l'arriere
+        transform.position += transform.forward * zoom * Time.deltaTime;
     }
     #endregion
-
-
-
-
-
-
-
-
 }
