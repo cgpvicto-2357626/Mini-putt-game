@@ -17,6 +17,7 @@ public class DetecteurTrou : MonoBehaviour
         {
             TeleporterBalle(other);
         }
+        GameEvents.TriggerTrouTombe();
     }
 
     /// <summary>

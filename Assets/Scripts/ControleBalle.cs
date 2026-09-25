@@ -10,18 +10,18 @@ public class ControleBalle : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private PlayerInput controles;
     [SerializeField] private Animator animatorMarteau;
-    [SerializeField] private Transform cibleCamera;
+    [SerializeField] private DirectionCoups directionCoups;
     [SerializeField] private float delaiAvantVerification = 0.2f;
 
     [Header("Paramétres")]
-    [SerializeField] private float forceFrappe = 1.5f;
     [SerializeField] private float vitesseArret = 0.05f;
 
     private InputAction actionFrapper;
     private bool enMove = false;
     private bool pretAFrapper = false;
-
     private float tempsDerniereFrappe = -1f;
+    private int nombreCoups = 0;
+
 
     /// <summary>
     /// prépare la touche espace pour faire avancer la balle
@@ -33,6 +33,7 @@ public class ControleBalle : MonoBehaviour
         {
             actionFrapper.performed += DetecteFrappe;
         }
+        rb.Sleep();
     }
 
     /// <summary>
@@ -52,6 +53,22 @@ public class ControleBalle : MonoBehaviour
         {
             actionFrapper.performed -= DetecteFrappe;
         }
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.OnBalleAuTrou += ReinitialiserCoups;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnBalleAuTrou -= ReinitialiserCoups;
+    }
+
+    private void ReinitialiserCoups()
+    {
+        nombreCoups = 0;
+        GameEvents.TriggerCoupEffectue(nombreCoups);
     }
 
     /// <summary>
@@ -80,19 +97,22 @@ public class ControleBalle : MonoBehaviour
     /// indique que la balle bouge ;
     /// met la caméra en mode suivi.
     /// </summary>
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (pretAFrapper == true && collision.gameObject.CompareTag("Marteau"))
+        if (pretAFrapper == true && other.gameObject.CompareTag("Marteau"))
         {
             pretAFrapper = false;
+            nombreCoups++;
+            GameEvents.TriggerCoupEffectue(nombreCoups);
             enMove = true;
 
             tempsDerniereFrappe = Time.time;
             GameEvents.TriggerFrappeCommencee();
 
             rb.WakeUp();
-            Vector3 direction = new Vector3(1f, 0f, 0f);
-            rb.AddForce(direction * forceFrappe, ForceMode.Impulse);
+            Vector3 direction = directionCoups.GetDirection();
+            float force = directionCoups.GetForce();
+            rb.AddForce(direction * force, ForceMode.Impulse);
 
         }
     }
@@ -113,6 +133,7 @@ public class ControleBalle : MonoBehaviour
         if (!enMove)
             return;
 
+        //une suggestion de Claude pour le probléme de suivi à la deuxiéme fois
         if (Time.time - tempsDerniereFrappe < delaiAvantVerification)
         {
             return;
@@ -122,7 +143,9 @@ public class ControleBalle : MonoBehaviour
         {
             enMove = false;
             pretAFrapper = false;
-
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            
             GameEvents.TriggerBalleArretee();
         }
     }
