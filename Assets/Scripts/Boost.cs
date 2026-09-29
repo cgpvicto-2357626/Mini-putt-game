@@ -7,9 +7,14 @@ public class Boost : MonoBehaviour
 {
     [SerializeField] private float vitesseBoost;
 
+    /// <summary>
+    /// Quand la balle entre dans la zone, on la pousse plus vite dans la meme direction
+    /// </summary>
+    /// <param name="other">Le collider de l'objet qui entre dans la zone</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball")){
+        if (other.CompareTag("Ball"))
+        {
             Rigidbody rb = other.GetComponent<Rigidbody>();
             if (rb != null)
             {

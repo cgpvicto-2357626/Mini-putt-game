@@ -9,6 +9,9 @@ public class GestionnaireDrapeau : MonoBehaviour
     [SerializeField] private GameObject flag;
     [SerializeField] private float distanceBalle = 2f;
 
+    /// <summary>
+    /// On calcule la distance entre le trou et la balle, si elle est trop proche on cache le drapeau
+    /// </summary>
     private void Update()
     {
         float distance = Vector3.Distance(transform.position, balle.position);

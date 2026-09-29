@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\DetecteurTrou.cs" />
     <Compile Include="Assets\Scripts\suiviPostionCircle.cs" />
     <Compile Include="Assets\Scripts\AffichageCoups.cs" />
+    <Compile Include="Assets\Scripts\BoutonRejouer.cs" />
     <Compile Include="Assets\Scripts\GameEvents.cs" />
     <Compile Include="Assets\Scripts\mouvementsCamera.cs" />
     <Compile Include="Assets\Scripts\GestionnaireDrapeau.cs" />

@@ -7,6 +7,10 @@ public class Bounce : MonoBehaviour
 {
     [SerializeField] private float forceBounce = 5f;
 
+    /// <summary>
+    /// Quand la balle entre dans la zone, on lui donne une poussee vers le haut
+    /// </summary>
+    /// <param name="other">Le collider de l'objet qui entre dans la zone</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))

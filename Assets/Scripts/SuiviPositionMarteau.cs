@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 /// <summary>
-/// des que la balle est arreter on met la marteau deriére elle 
+/// Des que la balle est arreter on met la marteau deriére elle
 /// </summary>
 public class SuiviPositionMarteau : MonoBehaviour
 {
@@ -11,7 +11,9 @@ public class SuiviPositionMarteau : MonoBehaviour
     private Collider[] ColliderMarteau;
     private MeshRenderer meshMarteau;
 
-
+    /// <summary>
+    /// On garde la hauteur de depart et on va chercher le mesh et les colliders du marteau
+    /// </summary>
     void Start()
     {
         hauteury = transform.position.y;
@@ -38,7 +40,6 @@ public class SuiviPositionMarteau : MonoBehaviour
         GameEvents.OnFrappeCommencee -= CacherMarteau;
         GameEvents.OnBalleArretee -= AfficherMarteau;
         GameEvents.OnModeFixeActive -= ActiverColliders;
-
     }
 
     /// <summary>
@@ -58,7 +59,9 @@ public class SuiviPositionMarteau : MonoBehaviour
         meshMarteau.enabled = false;
     }
 
-
+    /// <summary>
+    /// Active tous les colliders du marteau pour qu'il puisse frapper la balle
+    /// </summary>
     private void ActiverColliders()
     {
         for (int i = 0; i < ColliderMarteau.Length; i++)
@@ -67,7 +70,9 @@ public class SuiviPositionMarteau : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Desactive tous les colliders du marteau pour qu'il ne touche pas la balle
+    /// </summary>
     private void DesactiverColliders()
     {
         for (int i = 0; i < ColliderMarteau.Length; i++)

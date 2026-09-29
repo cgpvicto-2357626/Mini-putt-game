@@ -40,7 +40,9 @@ public class mouvementsCamera : MonoBehaviour
     private float zoom;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// On va chercher chaque action du joueur et on s'abonne pour savoir quand elle commence et quand elle arrete
+    /// </summary>
     void Start()
     {
         InputAction actionDeplacement = controles.actions.FindAction("player/DeplacerCamera");
@@ -60,7 +62,9 @@ public class mouvementsCamera : MonoBehaviour
         actionZoom.canceled += TerminerZoom;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// A chaque frame on applique les quatre mouvements de la caméra
+    /// </summary>
     void Update()
     {
         deplacerCamera();
@@ -69,6 +73,9 @@ public class mouvementsCamera : MonoBehaviour
         AppliquerZoom();
     }
 
+    /// <summary>
+    /// Quand l'objet est détruit, on se désabonne des actions pour éviter les erreurs
+    /// </summary>
     private void OnDestroy()
     {
         if (controles == null || controles.actions == null)
@@ -133,16 +140,27 @@ public class mouvementsCamera : MonoBehaviour
 
     #region Rotation
 
+    /// <summary>
+    /// Commence la rotation de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void CommencerRotation(InputAction.CallbackContext contexte)
     {
         rotation = vitesseRotation * contexte.ReadValue<float>();
     }
 
+    /// <summary>
+    /// Termine la rotation de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void TerminerRotation(InputAction.CallbackContext contexte)
     {
         rotation = 0.0f;
     }
 
+    /// <summary>
+    /// Fait tourner la caméra sur l'axe Y du monde
+    /// </summary>
     private void TournerCamera()
     {
         transform.Rotate(new Vector3(0.0f, rotation * Time.deltaTime, 0.0f), Space.World);
@@ -151,16 +169,27 @@ public class mouvementsCamera : MonoBehaviour
     #endregion
 
     #region inclinaison
+    /// <summary>
+    /// Commence l'inclinaison de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void CommencerInclinaison(InputAction.CallbackContext contexte)
     {
         inclinaison = vitesseInclinaison * contexte.ReadValue<float>();
     }
 
+    /// <summary>
+    /// Termine l'inclinaison de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void TerminerInclinaison(InputAction.CallbackContext contexte)
     {
         inclinaison = 0.0f;
     }
 
+    /// <summary>
+    /// Incline la caméra vers le haut ou vers le bas en restant dans les limites permises
+    /// </summary>
     private void InclinerCamera()
     {
         float angle = (transform.localEulerAngles.x + inclinaison * Time.deltaTime) % 360;
@@ -174,15 +203,27 @@ public class mouvementsCamera : MonoBehaviour
 
     #region Zoom
 
+    /// <summary>
+    /// Commence le zoom de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void CommencerZoom(InputAction.CallbackContext contexte)
     {
         zoom = contexte.ReadValue<float>() * vitesseZoom;
     }
 
+    /// <summary>
+    /// Termine le zoom de la caméra
+    /// </summary>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void TerminerZoom(InputAction.CallbackContext contexte)
     {
         zoom = 0f;
     }
+
+    /// <summary>
+    /// Avance ou recule la caméra pour faire le zoom
+    /// </summary>
     private void AppliquerZoom()
     {
         /*

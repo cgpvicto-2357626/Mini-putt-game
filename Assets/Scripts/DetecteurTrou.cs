@@ -15,9 +15,10 @@ public class DetecteurTrou : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
+            GameEvents.TriggerBalleReinitialisee();
             TeleporterBalle(other);
+            GameEvents.TriggerTrouTombe();
         }
-        GameEvents.TriggerTrouTombe();
     }
 
     /// <summary>

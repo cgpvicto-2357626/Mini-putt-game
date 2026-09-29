@@ -12,13 +12,17 @@ public class GestionnaireCamera : MonoBehaviour
     [SerializeField] private GameObject camFixe;
     [SerializeField] private MonoBehaviour controlesPlacement;
 
-
-
+    /// <summary>
+    /// Au debut du jeu on commence avec la camera de placement
+    /// </summary>
     void Start()
     {
         ActiverModePlacement();
     }
 
+    /// <summary>
+    /// quand le script s'active, on écoute les évenements
+    /// </summary>
     private void OnEnable()
     {
         GameEvents.OnFrappeCommencee += ActiverModeSuivi;
@@ -26,20 +30,24 @@ public class GestionnaireCamera : MonoBehaviour
         GameEvents.OnModeFixeActive += ActiverModeFixe;
     }
 
+    /// <summary>
+    /// quand le script se desactive, on arrete d'écouter les évenements
+    /// </summary>
     private void OnDisable()
     {
         GameEvents.OnFrappeCommencee -= ActiverModeSuivi;
         GameEvents.OnBalleArretee -= ActiverModePlacement;
         GameEvents.OnModeFixeActive -= ActiverModeFixe;
-
     }
 
+    /// <summary>
+    /// camera de placement quand le joueur vise son coup, on active aussi les controles
+    /// </summary>
     public void ActiverModePlacement()
     {
         if (camPlacement != null)
         {
             camPlacement.SetActive(true);
-
         }
 
         if (camFixe != null)
@@ -58,6 +66,9 @@ public class GestionnaireCamera : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// camera fixe qui ne bouge pas, les controles de placement sont fermer
+    /// </summary>
     public void ActiverModeFixe()
     {
         if (camPlacement != null)
@@ -103,6 +114,4 @@ public class GestionnaireCamera : MonoBehaviour
             controlesPlacement.enabled = false;
         }
     }
-
-
 }

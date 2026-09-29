@@ -7,7 +7,11 @@ public class ballTombe : MonoBehaviour
 {
     [SerializeField] private Transform pointDepart;
 
-    private void OnTriggerExit(Collider other)  
+    /// <summary>
+    /// Quand la balle sort de la zone, on arrete sa vitesse et on la remet au depart
+    /// </summary>
+    /// <param name="other">Le collider de l'objet qui sort de la zone</param>
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
@@ -19,6 +23,7 @@ public class ballTombe : MonoBehaviour
                 rb.position = pointDepart.position;
                 rb.Sleep();
             }
+            GameEvents.TriggerBalleReinitialisee();
             GameEvents.TriggerBalleArretee();
         }
     }

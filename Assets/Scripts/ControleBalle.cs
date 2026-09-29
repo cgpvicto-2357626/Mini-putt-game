@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 /// <summary>
 /// Script pour controller la balle en la frappant avec space
@@ -16,10 +17,10 @@ public class ControleBalle : MonoBehaviour
     [Header("Paramétres")]
     [SerializeField] private float vitesseArret = 0.05f;
 
+    private Coroutine coroutineArret;
     private InputAction actionFrapper;
     private bool enMove = false;
     private bool pretAFrapper = false;
-    private float tempsDerniereFrappe = -1f;
     private int nombreCoups = 0;
 
 
@@ -37,14 +38,6 @@ public class ControleBalle : MonoBehaviour
     }
 
     /// <summary>
-    /// on vérifie si la balle est arrétée
-    /// </summary>
-    private void Update()
-    {
-        VerifierArretBalle();
-    }
-
-    /// <summary>
     /// enléver l'evenement de la touche quand le script et détruit
     /// </summary>
     void OnDestroy()
@@ -55,16 +48,27 @@ public class ControleBalle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// quand le script s'active, on écoute les évenements du jeu
+    /// </summary>
     private void OnEnable()
     {
         GameEvents.OnBalleAuTrou += ReinitialiserCoups;
+        GameEvents.OnBalleReinitialisee += ArreterSuivi;
     }
 
+    /// <summary>
+    /// quand le script se desactive, on arrete d'écouter les évenements du jeu
+    /// </summary>
     private void OnDisable()
     {
         GameEvents.OnBalleAuTrou -= ReinitialiserCoups;
+        GameEvents.OnBalleReinitialisee -= ArreterSuivi;
     }
 
+    /// <summary>
+    /// reinitialise le text du coups dans le canvas
+    /// </summary>
     private void ReinitialiserCoups()
     {
         nombreCoups = 0;
@@ -72,9 +76,24 @@ public class ControleBalle : MonoBehaviour
     }
 
     /// <summary>
+    /// arrete le suivi de la balle quand elle est replacee par un autre script
+    /// (hors piste ou dans le trou), pour eviter un double arret
+    /// </summary>
+    private void ArreterSuivi()
+    {
+        if (coroutineArret != null)
+        {
+            StopCoroutine(coroutineArret);
+            coroutineArret = null;
+        }
+        enMove = false;
+        pretAFrapper = false;
+    }
+
+    /// <summary>
     /// qunad on appuie sur espace, la balle est frappée sauf il est pas en move
     /// </summary>
-    /// <param name="contexte"></param>
+    /// <param name="contexte">Information du callback de l'action</param>
     private void DetecteFrappe(InputAction.CallbackContext contexte)
     {
         if (!enMove && !pretAFrapper)
@@ -90,13 +109,14 @@ public class ControleBalle : MonoBehaviour
     }
 
     /// <summary>
-    /// si il detecte une collistion:
+    /// si il detecte une collision:
     /// mets pret a frapper a false, la balle est en movement
     /// réveille la balle ;
     ///lui donne une force vers la droite ;
     /// indique que la balle bouge ;
     /// met la caméra en mode suivi.
     /// </summary>
+    /// <param name="other">Le collider de l'objet qui touche la balle</param>
     private void OnTriggerEnter(Collider other)
     {
         if (pretAFrapper == true && other.gameObject.CompareTag("Marteau"))
@@ -106,48 +126,32 @@ public class ControleBalle : MonoBehaviour
             GameEvents.TriggerCoupEffectue(nombreCoups);
             enMove = true;
 
-            tempsDerniereFrappe = Time.time;
             GameEvents.TriggerFrappeCommencee();
 
             rb.WakeUp();
             Vector3 direction = directionCoups.GetDirection();
             float force = directionCoups.GetForce();
             rb.AddForce(direction * force, ForceMode.Impulse);
-
+            coroutineArret = StartCoroutine(AttendreArretBalle());
         }
     }
 
     /// <summary>
-    /// Déplace en continu la cible de la caméra sur X et Z pour suivre la balle en mouvement.
+    /// attend un peu, puis attend que la balle arrete de bouger
     /// </summary>
-
-
-    /// <summary>
-    /// on vérfie si la balle est arréter
-    /// si balle ne bouge pas, on fait rien
-    /// si leur vitesse est presque 0, la balle est arreter 
-    /// revient en mode placment
-    /// </summary>
-    private void VerifierArretBalle()
+    /// <returns>La coroutine qui attend l'arret de la balle</returns>
+    private IEnumerator AttendreArretBalle()
     {
-        if (!enMove)
-            return;
+        yield return new WaitForSeconds(delaiAvantVerification);
 
-        //une suggestion de Claude pour le probléme de suivi à la deuxiéme fois
-        if (Time.time - tempsDerniereFrappe < delaiAvantVerification)
+        while (rb.linearVelocity.sqrMagnitude >= vitesseArret * vitesseArret)
         {
-            return;
+            yield return null;
         }
-
-        if (enMove && rb.linearVelocity.sqrMagnitude < vitesseArret * vitesseArret)
-        {
-            enMove = false;
-            pretAFrapper = false;
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            
-            GameEvents.TriggerBalleArretee();
-        }
+        enMove = false;
+        pretAFrapper = false;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        GameEvents.TriggerBalleArretee();
     }
-
 }
